@@ -1,5 +1,5 @@
-//Name:Rakshith
-//USN:NNM24EE086
+//Name:Rohan
+//USN:NNM24EE089
 #include <reg51.h>
 unsigned char array[5] ={0x01,0xA1,0x1A,0x31,0xD2};
 unsigned char temporary_variable =0x00, count, array_length;
@@ -15,4 +15,5 @@ temporary_variable =array[count];
 }
 }
 P2=temporary_variable;
+
 }
