@@ -1,5 +1,5 @@
-//Name:Rakshith
-//NNM24EE086
+//Name:Rohan
+//NNM24EE089
 //21-08-2025&Title:To familiarize logical and arithmetic instructions
 #include <reg51.h>
 unsigned char idata *internalmemory=0x60;
@@ -31,4 +31,5 @@ variable=0xde;
 temporary_variable=(variable &0x0f)<<4;
 variable=(variable &0xf0)>>4;
 *internalmemory=variable| temporary_variable;
+
 }
