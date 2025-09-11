@@ -1,5 +1,5 @@
-//Name:Rakshith
-//USN:NNM24EE086
+//Name:Rohan
+//USN:NNM24EE089
 #include <reg51.h>
 unsigned char data1=0xc7, data2=0xb2, sum, difference, quotient, remainder;
 unsigned int product;
@@ -27,4 +27,5 @@ quotient=data1/data2; //observe PSW //
 remainder=data1%data2;
 P2=quotient;
 P1=remainder;
+
 }
