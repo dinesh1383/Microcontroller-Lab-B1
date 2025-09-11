@@ -1,5 +1,5 @@
-//name:prashasth k
-//usn:nnm24ee081
+//name:Rohan
+//usn:nnm24ee089
 //date:21/08/2025
 //title of exp:demonstration of various addressing modes and examining the practical implementation
 #include <reg51.h>
@@ -10,3 +10,4 @@ void main(void)
 	*R1=ACC;
 	ACC=* internalmemory;
 }
+
