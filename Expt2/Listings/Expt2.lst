@@ -1,0 +1,43 @@
+C51 COMPILER V9.56.0.0   EXPT2                                                             09/04/2025 12:02:30 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE EXPT2
+OBJECT MODULE PLACED IN .\Objects\Expt2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Expt2.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Exp
+                    -t2.lst) TABS(2) OBJECT(.\Objects\Expt2.obj)
+
+line level    source
+
+   1          //S Avaneeth
+   2          //NNM24EE092
+   3          //This program is to find the largest number stored in an array and display the result in port2// 
+   4          #include <reg51.h> 
+   5          unsigned char array[5] ={0x01,0xa1,0x1a,0x31,0xd2}; 
+   6          unsigned char tempvariable=0x00, count, array_length;
+   7          void main(void) 
+   8          { 
+   9   1        P2=0x00;
+  10   1        array_length=sizeof(array)/sizeof(char); 
+  11   1        for(count=0; count<array_length; count++)  // to execute successive comparison of array data// 
+  12   1        { 
+  13   2          if (array[count]> tempvariable)       
+  14   2          { 
+  15   3            tempvariable=array[count]; 
+  16   3          } 
+  17   2        }  
+  18   1        P2= tempvariable; 
+  19   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     37    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

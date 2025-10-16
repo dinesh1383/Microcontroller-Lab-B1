@@ -1,0 +1,3 @@
+".\Objects\Expt4a.obj" 
+TO ".\Objects\Expt4a" 
+PRINT(".\Listings\Expt4a.m51") RAMSIZE(256) 
