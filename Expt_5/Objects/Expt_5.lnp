@@ -1,3 +1,0 @@
-".\Objects\Expt_5.obj" 
-TO ".\Objects\Expt_5" 
-PRINT(".\Listings\Expt_5.m51") RAMSIZE(256) 
