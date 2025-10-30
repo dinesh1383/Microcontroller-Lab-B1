@@ -1,0 +1,232 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/30/2025  12:36:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\expt7a.obj TO .\Objects\expt7a PRINT (.\Listings\expt7a.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\expt7a.obj (EXPT7A)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\expt7a (EXPT7A)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0035H     UNIT         ?DT?EXPT7A
+            IDATA   003DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     005DH     UNIT         ?PR?MAIN?EXPT7A
+            CODE    08E9H     0043H     UNIT         ?PR?_DELAY?EXPT7A
+            CODE    092CH     0042H     UNIT         ?C_INITSEG
+            CODE    096EH     0020H     UNIT         ?PR?READ_ADC?EXPT7A
+            CODE    098EH     0019H     UNIT         ?PR?LCD_INITIALIZATION?EXPT7A
+            CODE    09A7H     000CH     UNIT         ?PR?_LCD_COMMAND_WRITE?EXPT7A
+            CODE    09B3H     000CH     UNIT         ?PR?_LCD_MESSAGE_WRITE?EXPT7A
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\expt7a (EXPT7A)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?EXPT7A
+  +--> ?C_INITSEG
+
+?PR?MAIN?EXPT7A
+  +--> ?PR?LCD_INITIALIZATION?EXPT7A
+  +--> ?PR?_LCD_COMMAND_WRITE?EXPT7A
+  +--> ?PR?_LCD_MESSAGE_WRITE?EXPT7A
+  +--> ?PR?READ_ADC?EXPT7A
+
+?PR?LCD_INITIALIZATION?EXPT7A
+  +--> ?PR?_LCD_COMMAND_WRITE?EXPT7A
+
+?PR?_LCD_COMMAND_WRITE?EXPT7A
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/30/2025  12:36:18  PAGE 2
+
+
+  +--> ?PR?_DELAY?EXPT7A
+
+?PR?_LCD_MESSAGE_WRITE?EXPT7A
+  +--> ?PR?_DELAY?EXPT7A
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\expt7a (EXPT7A)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXPT7A
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.6       PUBLIC        LCD_register_select
+  C:098EH         PUBLIC        LCD_Initialization
+  D:0008H         PUBLIC        ascii
+  D:0013H         PUBLIC        message_one
+  D:00A8H         PUBLIC        IE
+  C:08EFH         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  B:00B0H.7       PUBLIC        LCD_enable
+  D:00D8H         PUBLIC        CCON
+  D:0023H         PUBLIC        message_two
+  C:088CH         PUBLIC        main
+  C:09A7H         PUBLIC        _LCD_command_write
+  B:00A0H.5       PUBLIC        ADC_output_enable
+  D:002FH         PUBLIC        timer_reset
+  C:09B3H         PUBLIC        _LCD_message_write
+  D:0031H         PUBLIC        timer_count
+  D:00C0H         PUBLIC        WDTC
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:0033H         PUBLIC        timer_higherbyte
+  B:00A0H.7       PUBLIC        ADC_end_of_conversion
+  C:096EH         PUBLIC        read_ADC
+  D:0035H         PUBLIC        ADC_value
+  D:0036H         PUBLIC        charactor_count
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:00E8H         PUBLIC        IEA
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  B:00A0H.6       PUBLIC        ADC_start
+  D:00F8H         PUBLIC        IPA
+  D:0037H         PUBLIC        timer_disable
+  D:00C8H         PUBLIC        T2CON
+  D:0039H         PUBLIC        timer_lowerbyte
+  D:003BH         PUBLIC        timer_enable
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          L?0021
+  -------         ENDPROC       L?0021
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/30/2025  12:36:18  PAGE 3
+
+
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time_delay_milisecond
+  C:08EFH         LINE#         191
+  C:08EFH         LINE#         192
+  C:08EFH         LINE#         193
+  C:08F2H         LINE#         194
+  C:0900H         LINE#         195
+  C:0900H         LINE#         196
+  C:0903H         LINE#         197
+  C:0906H         LINE#         198
+  C:090EH         LINE#         199
+  C:0911H         LINE#         200
+  C:0919H         LINE#         201
+  C:0921H         LINE#         202
+  C:092BH         LINE#         203
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCD_COMMAND_WRITE
+  D:0007H         SYMBOL        command_value
+  C:09A7H         LINE#         212
+  C:09A7H         LINE#         213
+  C:09A7H         LINE#         214
+  C:09A9H         LINE#         215
+  C:09ABH         LINE#         216
+  C:09ABH         LINE#         217
+  C:09AEH         LINE#         218
+  C:09B0H         LINE#         219
+  -------         ENDPROC       _LCD_COMMAND_WRITE
+  -------         PROC          LCD_INITIALIZATION
+  C:098EH         LINE#         221
+  C:098EH         LINE#         222
+  C:098EH         LINE#         223
+  C:0993H         LINE#         224
+  C:0998H         LINE#         225
+  C:099DH         LINE#         226
+  C:09A2H         LINE#         227
+  -------         ENDPROC       LCD_INITIALIZATION
+  -------         PROC          _LCD_MESSAGE_WRITE
+  D:0007H         SYMBOL        message_charactor
+  C:09B3H         LINE#         229
+  C:09B3H         LINE#         230
+  C:09B3H         LINE#         231
+  C:09B5H         LINE#         232
+  C:09B7H         LINE#         233
+  C:09B7H         LINE#         234
+  C:09BAH         LINE#         235
+  C:09BCH         LINE#         236
+  -------         ENDPROC       _LCD_MESSAGE_WRITE
+  -------         PROC          MAIN
+  -------         DO            
+  D:0005H         SYMBOL        ADC_output
+  D:0004H         SYMBOL        Voltage_digit
+  -------         ENDDO         
+  C:088CH         LINE#         17
+  C:088CH         LINE#         18
+  C:088CH         LINE#         20
+  C:088FH         LINE#         21
+  C:0892H         LINE#         22
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/30/2025  12:36:18  PAGE 4
+
+
+  C:0894H         LINE#         23
+  C:0896H         LINE#         24
+  C:0898H         LINE#         25
+  C:089BH         LINE#         26
+  C:08A0H         LINE#         27
+  C:08A9H         LINE#         28
+  C:08A9H         LINE#         29
+  C:08ACH         LINE#         30
+  C:08AEH         LINE#         31
+  C:08B0H         LINE#         32
+  C:08B3H         LINE#         33
+  C:08B8H         LINE#         34
+  C:08C0H         LINE#         35
+  C:08C0H         LINE#         36
+  C:08CAH         LINE#         37
+  C:08CCH         LINE#         38
+  C:08CEH         LINE#         39
+  C:08CEH         LINE#         40
+  C:08CEH         LINE#         41
+  C:08D3H         LINE#         42
+  C:08D9H         LINE#         43
+  C:08DEH         LINE#         44
+  C:08E7H         LINE#         45
+  -------         ENDPROC       MAIN
+  -------         PROC          READ_ADC
+  C:096EH         LINE#         47
+  C:096EH         LINE#         48
+  C:096EH         LINE#         49
+  C:0970H         LINE#         50
+  C:0974H         LINE#         51
+  C:0976H         LINE#         52
+  C:0979H         LINE#         53
+  C:097CH         LINE#         54
+  C:097EH         LINE#         55
+  C:0982H         LINE#         56
+  C:0985H         LINE#         57
+  C:0987H         LINE#         58
+  C:098BH         LINE#         59
+  C:098DH         LINE#         60
+  -------         ENDPROC       READ_ADC
+  -------         ENDMOD        EXPT7A
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0132H BYTE (14%) *
+******************************************************************************
+
+Program Size: data=62.0 xdata=0 code=450
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

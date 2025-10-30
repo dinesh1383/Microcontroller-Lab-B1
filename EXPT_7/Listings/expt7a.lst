@@ -1,0 +1,87 @@
+C51 COMPILER V9.56.0.0   EXPT7A                                                            10/30/2025 12:36:03 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE EXPT7A
+OBJECT MODULE PLACED IN .\Objects\expt7a.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE expt7a.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\ex
+                    -pt7a.lst) TABS(2) OBJECT(.\Objects\expt7a.obj)
+
+line level    source
+
+   1          #include <MicroLABlet.h>    
+   2          sbit ADC_start= P2^6;  
+   3          // ADC Start Conversion Output 
+   4          sbit ADC_end_of_conversion= P2^7; // ADC End of Conversion Input 
+   5          sbit ADC_output_enable = P2^5; 
+   6          #define ADC_data   P0  
+   7          // ADC Data Input 
+   8          #define declare_output_port 0x00 
+   9          #define declare_input_port 0xFF 
+  10          unsigned char read_ADC( );
+  11          unsigned char ADC_value; 
+  12          unsigned char charactor_count; 
+  13          void _nop_(void); 
+  14          unsigned char message_one[ ] = {"ADC I/P Voltage"}; 
+  15          unsigned char message_two[ ] = {"= V        "}; 
+  16          unsigned char ascii[ ]="0123456789";  
+  17          void main (void) 
+  18          { 
+  19   1      unsigned char ADC_output, Voltage_digit; 
+  20   1      ADC_data=declare_input_port; 
+  21   1      P2= declare_output_port; 
+  22   1      ADC_start=0; 
+  23   1      ADC_end_of_conversion =1; 
+  24   1      ADC_output_enable=0; 
+  25   1      LCD_Initialization ( ); 
+  26   1      LCD_command_write (0X80); 
+  27   1      while(message_one[charactor_count]!='\0') 
+  28   1      { 
+  29   2      LCD_message_write(message_one[charactor_count]); 
+  30   2      charactor_count++; 
+  31   2      } 
+  32   1      charactor_count=0; 
+  33   1      LCD_command_write(0xC7); 
+  34   1      while(message_one[charactor_count]!='\0') 
+  35   1      { 
+  36   2      LCD_message_write(message_two[charactor_count]); 
+  37   2      charactor_count++; 
+  38   2      }  
+  39   1      while (1) 
+  40   1      { 
+  41   2      ADC_output=read_ADC( ); 
+  42   2      Voltage_digit= ADC_output/0x32;  
+  43   2      LCD_command_write (0xC8); 
+  44   2      LCD_message_write (ascii[Voltage_digit]); 
+  45   2      } 
+  46   1        } 
+  47          unsigned char read_ADC( ) 
+  48               { 
+  49   1       ADC_start = 1; 
+  50   1       _nop_( );_nop_( );_nop_( );_nop_( ); 
+  51   1        ADC_start = 0; 
+  52   1       _nop_( );_nop_( );_nop_( ); 
+  53   1       while(ADC_end_of_conversion ==1); 
+  54   1       ADC_output_enable=1; 
+C51 COMPILER V9.56.0.0   EXPT7A                                                            10/30/2025 12:36:03 PAGE 2   
+
+  55   1       _nop_( );_nop_( );_nop_( );_nop_( ); 
+  56   1       ADC_value=ADC_data; 
+  57   1       ADC_output_enable=0; 
+  58   1       _nop_( );_nop_( );_nop_( );_nop_( ); 
+  59   1       return(ADC_value); 
+  60   1         }
+  61               
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    241    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     53    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
