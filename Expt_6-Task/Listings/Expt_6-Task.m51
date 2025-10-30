@@ -1,0 +1,200 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/23/2025  12:00:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Expt_6-Task.obj TO .\Objects\Expt_6-Task PRINT (.\Listings\Expt_6-Task.m51) RAMSIZ
+>> E (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Expt_6-Task.obj (EXPT_6_TASK)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Expt_6-Task (EXPT_6_TASK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     002EH     UNIT         ?DT?EXPT_6_TASK
+            DATA    0036H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0037H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0043H     UNIT         ?PR?_DELAY?EXPT_6_TASK
+            CODE    08CFH     003BH     UNIT         ?PR?MAIN?EXPT_6_TASK
+            CODE    090AH     003BH     UNIT         ?C_INITSEG
+            CODE    0945H     0019H     UNIT         ?PR?LCD_INITIALIZATION?EXPT_6_TASK
+            CODE    095EH     000CH     UNIT         ?PR?_LCD_COMMAND_WRITE?EXPT_6_TASK
+            CODE    096AH     000CH     UNIT         ?PR?_LCD_MESSAGE_WRITE?EXPT_6_TASK
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Expt_6-Task (EXPT_6_TASK)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?EXPT_6_TASK
+  +--> ?C_INITSEG
+
+?PR?MAIN?EXPT_6_TASK                       0036H    0001H
+  +--> ?PR?LCD_INITIALIZATION?EXPT_6_TASK
+  +--> ?PR?_LCD_COMMAND_WRITE?EXPT_6_TASK
+  +--> ?PR?_LCD_MESSAGE_WRITE?EXPT_6_TASK
+
+?PR?LCD_INITIALIZATION?EXPT_6_TASK         -----    -----
+  +--> ?PR?_LCD_COMMAND_WRITE?EXPT_6_TASK
+
+?PR?_LCD_COMMAND_WRITE?EXPT_6_TASK         -----    -----
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/23/2025  12:00:16  PAGE 2
+
+
+  +--> ?PR?_DELAY?EXPT_6_TASK
+
+?PR?_LCD_MESSAGE_WRITE?EXPT_6_TASK         -----    -----
+  +--> ?PR?_DELAY?EXPT_6_TASK
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Expt_6-Task (EXPT_6_TASK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXPT_6_TASK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00B0H.6       PUBLIC        LCD_register_select
+  C:0945H         PUBLIC        LCD_Initialization
+  B:00B0H.5       PUBLIC        buzzer_control
+  D:0008H         PUBLIC        message_one
+  D:00A8H         PUBLIC        IE
+  C:0892H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  B:00B0H.7       PUBLIC        LCD_enable
+  D:00D8H         PUBLIC        CCON
+  D:0019H         PUBLIC        message_two
+  C:08CFH         PUBLIC        main
+  C:095EH         PUBLIC        _LCD_command_write
+  D:002AH         PUBLIC        timer_reset
+  C:096AH         PUBLIC        _LCD_message_write
+  D:002CH         PUBLIC        timer_count
+  D:00C0H         PUBLIC        WDTC
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:002EH         PUBLIC        timer_higherbyte
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:00E8H         PUBLIC        IEA
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  D:00F8H         PUBLIC        IPA
+  D:0030H         PUBLIC        timer_disable
+  D:00C8H         PUBLIC        T2CON
+  D:0032H         PUBLIC        timer_lowerbyte
+  D:0034H         PUBLIC        timer_enable
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          L?0018
+  -------         ENDPROC       L?0018
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time_delay_milisecond
+  C:0892H         LINE#         191
+  C:0892H         LINE#         192
+  C:0892H         LINE#         193
+  C:0895H         LINE#         194
+  C:08A3H         LINE#         195
+  C:08A3H         LINE#         196
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/23/2025  12:00:16  PAGE 3
+
+
+  C:08A6H         LINE#         197
+  C:08A9H         LINE#         198
+  C:08B1H         LINE#         199
+  C:08B4H         LINE#         200
+  C:08BCH         LINE#         201
+  C:08C4H         LINE#         202
+  C:08CEH         LINE#         203
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0036H         SYMBOL        charactor_count
+  -------         ENDDO         
+  C:08CFH         LINE#         17
+  C:08CFH         LINE#         18
+  C:08CFH         LINE#         20
+  C:08D2H         LINE#         21
+  C:08D4H         LINE#         22
+  C:08D6H         LINE#         23
+  C:08D8H         LINE#         24
+  C:08DBH         LINE#         25
+  C:08E0H         LINE#         26
+  C:08E9H         LINE#         27
+  C:08E9H         LINE#         28
+  C:08ECH         LINE#         29
+  C:08EEH         LINE#         30
+  C:08F0H         LINE#         31
+  C:08F3H         LINE#         32
+  C:08F8H         LINE#         33
+  C:0901H         LINE#         34
+  C:0901H         LINE#         35
+  C:0904H         LINE#         36
+  C:0906H         LINE#         37
+  C:0908H         LINE#         38
+  -------         ENDPROC       MAIN
+  -------         PROC          LCD_INITIALIZATION
+  C:0945H         LINE#         40
+  C:0945H         LINE#         41
+  C:0945H         LINE#         42
+  C:094AH         LINE#         43
+  C:094FH         LINE#         44
+  C:0954H         LINE#         45
+  C:0959H         LINE#         46
+  -------         ENDPROC       LCD_INITIALIZATION
+  -------         PROC          _LCD_COMMAND_WRITE
+  D:0007H         SYMBOL        command_value
+  C:095EH         LINE#         48
+  C:095EH         LINE#         49
+  C:095EH         LINE#         50
+  C:0960H         LINE#         51
+  C:0962H         LINE#         52
+  C:0962H         LINE#         53
+  C:0965H         LINE#         54
+  C:0967H         LINE#         55
+  -------         ENDPROC       _LCD_COMMAND_WRITE
+  -------         PROC          _LCD_MESSAGE_WRITE
+  D:0007H         SYMBOL        message_charactor
+  C:096AH         LINE#         57
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/23/2025  12:00:16  PAGE 4
+
+
+  C:096AH         LINE#         58
+  C:096AH         LINE#         59
+  C:096CH         LINE#         60
+  C:096EH         LINE#         61
+  C:096EH         LINE#         62
+  C:0971H         LINE#         63
+  C:0973H         LINE#         64
+  -------         ENDPROC       _LCD_MESSAGE_WRITE
+  -------         ENDMOD        EXPT_6_TASK
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00E9H BYTE (11%) *
+******************************************************************************
+
+Program Size: data=56.0 xdata=0 code=377
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

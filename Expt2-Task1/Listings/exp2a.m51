@@ -1,0 +1,85 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/05/2025  14:50:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\exp2a.obj TO .\Objects\exp2a.mc PRINT (.\Listings\exp2a.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\exp2a.obj (EXP2A)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\exp2a.mc (EXP2A)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         ?DT?EXP2A
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0023H     UNIT         ?PR?MAIN?EXP2A
+            CODE    08AFH     000BH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\exp2a.mc (EXP2A)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?EXP2A
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\exp2a.mc (EXP2A)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP2A
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        array_length
+  D:0009H         PUBLIC        array
+  C:088CH         PUBLIC        main
+  D:000EH         PUBLIC        count
+  D:000FH         PUBLIC        temporary_register
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2025  14:50:18  PAGE 2
+
+
+  -------         PROC          MAIN
+  C:088CH         LINE#         4
+  C:088CH         LINE#         5
+  C:088CH         LINE#         6
+  C:088FH         LINE#         7
+  C:0899H         LINE#         8
+  C:0899H         LINE#         9
+  C:08A5H         LINE#         10
+  C:08A7H         LINE#         11
+  C:08A7H         LINE#         12
+  C:08ABH         LINE#         13
+  C:08AEH         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EXP2A
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002DH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=17.0 xdata=0 code=189
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

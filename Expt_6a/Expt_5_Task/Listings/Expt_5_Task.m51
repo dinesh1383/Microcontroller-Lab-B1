@@ -1,0 +1,248 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/16/2025  12:17:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Expt_5_Task.obj TO .\Objects\Expt_5_Task PRINT (.\Listings\Expt_5_Task.m51) RAMSIZ
+>> E (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Expt_5_Task.obj (EXPT_5_TASK)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Expt_5_Task (EXPT_5_TASK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0011H     UNIT         _DATA_GROUP_
+            DATA    0019H     000EH     UNIT         ?DT?EXPT_5_TASK
+            IDATA   0027H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     00C0H     UNIT         ?PR?READKEY?EXPT_5_TASK
+            CODE    09B6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0A42H     0047H     UNIT         ?PR?_DISPLAY?EXPT_5_TASK
+            CODE    0A89H     003DH     UNIT         ?PR?_DELAY?EXPT_5_TASK
+            CODE    0AC6H     001FH     UNIT         ?PR?MAIN?EXPT_5_TASK
+            CODE    0AE5H     0018H     UNIT         ?C_INITSEG
+            CODE    0AFDH     0010H     UNIT         ?CO?EXPT_5_TASK
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Expt_5_Task (EXPT_5_TASK)
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?EXPT_5_TASK
+  +--> ?C_INITSEG
+
+?PR?MAIN?EXPT_5_TASK             -----    -----
+  +--> ?PR?READKEY?EXPT_5_TASK
+  +--> ?PR?_DISPLAY?EXPT_5_TASK
+
+?PR?_DISPLAY?EXPT_5_TASK         0008H    0011H
+  +--> ?CO?EXPT_5_TASK
+  +--> ?PR?_DELAY?EXPT_5_TASK
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/16/2025  12:17:02  PAGE 2
+
+
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Expt_5_Task (EXPT_5_TASK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXPT_5_TASK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0019H         PUBLIC        check
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.5       PUBLIC        buzzer_control
+  D:00A8H         PUBLIC        IE
+  C:0A89H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:0AC6H         PUBLIC        main
+  D:001AH         PUBLIC        timer_reset
+  D:001CH         PUBLIC        timer_count
+  D:00C0H         PUBLIC        WDTC
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:001EH         PUBLIC        timer_higherbyte
+  C:0AFDH         SYMBOL        _?ix1000
+  B:00B0H.6       PUBLIC        disp1_control
+  D:0020H         PUBLIC        key_value
+  B:00B0H.7       PUBLIC        disp2_control
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:00E8H         PUBLIC        IEA
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  D:00F8H         PUBLIC        IPA
+  D:0021H         PUBLIC        timer_disable
+  D:00C8H         PUBLIC        T2CON
+  D:0023H         PUBLIC        timer_lowerbyte
+  C:08F6H         PUBLIC        readkey
+  D:0025H         PUBLIC        timer_enable
+  C:0A42H         PUBLIC        _display
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time_delay_milisecond
+  C:0A89H         LINE#         191
+  C:0A89H         LINE#         192
+  C:0A89H         LINE#         193
+  C:0A8CH         LINE#         194
+  C:0A9AH         LINE#         195
+  C:0A9AH         LINE#         196
+  C:0A9DH         LINE#         197
+  C:0AA0H         LINE#         198
+  C:0AA8H         LINE#         199
+  C:0AABH         LINE#         200
+  C:0AB3H         LINE#         201
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/16/2025  12:17:02  PAGE 3
+
+
+  C:0ABBH         LINE#         202
+  C:0AC5H         LINE#         203
+  -------         ENDPROC       _DELAY
+  -------         PROC          _DISPLAY
+  D:0008H         SYMBOL        display_value
+  -------         DO            
+  D:0009H         SYMBOL        hexcode_digit
+  D:0003H         SYMBOL        fps
+  D:0005H         SYMBOL        higher_nibble
+  D:0004H         SYMBOL        lower_nibble
+  -------         ENDDO         
+  C:0A42H         LINE#         210
+  C:0A44H         LINE#         211
+  C:0A44H         LINE#         212
+  C:0A57H         LINE#         216
+  C:0A5DH         LINE#         217
+  C:0A62H         LINE#         218
+  C:0A64H         LINE#         219
+  C:0A64H         LINE#         220
+  C:0A66H         LINE#         221
+  C:0A68H         LINE#         222
+  C:0A6FH         LINE#         223
+  C:0A76H         LINE#         224
+  C:0A78H         LINE#         225
+  C:0A7AH         LINE#         226
+  C:0A81H         LINE#         227
+  C:0A84H         LINE#         228
+  C:0A88H         LINE#         229
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          READKEY
+  C:08F6H         LINE#         233
+  C:08F6H         LINE#         234
+  C:08F6H         LINE#         235
+  C:08F6H         LINE#         236
+  C:08F6H         LINE#         237
+  C:08F9H         LINE#         238
+  C:08FEH         LINE#         239
+  C:0901H         LINE#         240
+  C:0904H         LINE#         241
+  C:0909H         LINE#         242
+  C:090CH         LINE#         243
+  C:090FH         LINE#         244
+  C:0914H         LINE#         245
+  C:0917H         LINE#         246
+  C:091AH         LINE#         247
+  C:091FH         LINE#         248
+  C:0922H         LINE#         249
+  C:0925H         LINE#         250
+  C:0928H         LINE#         251
+  C:092DH         LINE#         252
+  C:0930H         LINE#         253
+  C:0933H         LINE#         254
+  C:0938H         LINE#         255
+  C:093BH         LINE#         256
+  C:093EH         LINE#         257
+  C:0943H         LINE#         258
+  C:0946H         LINE#         259
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/16/2025  12:17:02  PAGE 4
+
+
+  C:0949H         LINE#         260
+  C:094EH         LINE#         261
+  C:0951H         LINE#         262
+  C:0954H         LINE#         263
+  C:0957H         LINE#         264
+  C:095CH         LINE#         265
+  C:095FH         LINE#         266
+  C:0962H         LINE#         267
+  C:0967H         LINE#         268
+  C:096AH         LINE#         269
+  C:096DH         LINE#         270
+  C:0972H         LINE#         271
+  C:0975H         LINE#         272
+  C:0978H         LINE#         273
+  C:097DH         LINE#         274
+  C:0980H         LINE#         275
+  C:0983H         LINE#         276
+  C:0986H         LINE#         277
+  C:098BH         LINE#         278
+  C:098EH         LINE#         279
+  C:0991H         LINE#         280
+  C:0996H         LINE#         281
+  C:0999H         LINE#         282
+  C:099CH         LINE#         283
+  C:09A1H         LINE#         284
+  C:09A4H         LINE#         285
+  C:09A7H         LINE#         286
+  C:09B0H         LINE#         287
+  C:09B3H         LINE#         288
+  C:09B5H         LINE#         289
+  C:09B5H         LINE#         290
+  -------         ENDPROC       READKEY
+  -------         PROC          MAIN
+  C:0AC6H         LINE#         8
+  C:0AC6H         LINE#         9
+  C:0AC6H         LINE#         10
+  C:0AC8H         LINE#         11
+  C:0ACBH         LINE#         12
+  C:0ACDH         LINE#         13
+  C:0ACDH         LINE#         14
+  C:0ACDH         LINE#         15
+  C:0AD0H         LINE#         16
+  C:0AD3H         LINE#         17
+  C:0AD9H         LINE#         18
+  C:0AD9H         LINE#         19
+  C:0ADEH         LINE#         20
+  C:0ADEH         LINE#         21
+  C:0AE3H         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EXPT_5_TASK
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 018AH BYTE (19%) *
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/16/2025  12:17:02  PAGE 5
+
+
+******************************************************************************
+
+Program Size: data=40.0 xdata=0 code=784
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
