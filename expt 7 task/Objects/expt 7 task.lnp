@@ -1,3 +1,0 @@
-".\Objects\expt 7 task.obj" 
-TO ".\Objects\expt 7 task" 
-PRINT(".\Listings\expt 7 task.m51") RAMSIZE(256) 
