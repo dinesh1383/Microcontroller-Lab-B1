@@ -1,0 +1,63 @@
+C51 COMPILER V9.56.0.0   EXPT6_TASK                                                        11/06/2025 12:55:11 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE EXPT6_TASK
+OBJECT MODULE PLACED IN .\Objects\Expt6-Task.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Expt6-Task.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\Expt6-Task.lst) TABS(2) OBJECT(.\Objects\Expt6-Task.obj)
+
+line level    source
+
+   1          // S Avaneeth
+   2          // NNM24EE092
+   3          // Serial Communication with relay and buzzer interfacing
+   4          #include <MicroLABlet.h> 
+   5          unsigned char control,charactor_count; 
+   6          sbit buzzer=P3^5;
+   7          sbit relay=P2^0;
+   8          void main(void) 
+   9          { 
+  10   1        unsigned char Message[ ]="NMAM Institute of Technology"; 
+  11   1        buzzer=0;  //output port 
+  12   1        buzzer=1;  //disable buzzer 
+  13   1        relay=0;  //output port 
+  14   1        relay=1;  //disable relay 
+  15   1        TMOD=0x20;   //Timer 1 Mode 2 
+  16   1        TH1=0xFD;   //9600 Baud rate 
+  17   1        SCON=0x50;   //Serial Mode 1 
+  18   1        TR1=1;      
+  19   1        for (charactor_count=0;charactor_count<=12;charactor_count++) 
+  20   1        { 
+  21   2          SBUF=Message[charactor_count]; //Each charactor of message to be transferred serially  
+  22   2          while(TI==0); 
+  23   2          TI=0; 
+  24   2        } 
+  25   1        while(1) 
+  26   1        { 
+  27   2          while(RI==0); 
+  28   2          control=SBUF; 
+  29   2          RI=0;
+  30   2          P2=0x00;      
+  31   2          while(1)                                  
+  32   2          { 
+  33   3            P2=0xff;  
+  34   3            delay(1000); //internal delay function of 1ms// 
+  35   3            P2=0x00;  
+  36   3            delay(1000);   
+  37   3          }       
+  38   2        }  
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    151    ----
+   CONSTANT SIZE    =     29    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     14      29
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
