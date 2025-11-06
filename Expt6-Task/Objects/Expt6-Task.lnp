@@ -1,0 +1,3 @@
+".\Objects\Expt6-Task.obj" 
+TO ".\Objects\Expt6-Task" 
+PRINT(".\Listings\Expt6-Task.m51") RAMSIZE(256) 

@@ -1,0 +1,176 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/06/2025  12:38:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Expt6-Task.obj TO .\Objects\Expt6-Task PRINT (.\Listings\Expt6-Task.m51) RAMSIZE (
+>> 256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Expt6-Task.obj (EXPT6_TASK)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Expt6-Task (EXPT6_TASK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001DH     UNIT         _DATA_GROUP_
+            DATA    0025H     000EH     UNIT         ?DT?EXPT6_TASK
+            IDATA   0033H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0982H     005EH     UNIT         ?PR?MAIN?EXPT6_TASK
+            CODE    09E0H     003DH     UNIT         ?PR?_DELAY?EXPT6_TASK
+            CODE    0A1DH     001DH     UNIT         ?CO?EXPT6_TASK
+            CODE    0A3AH     0015H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Expt6-Task (EXPT6_TASK)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?EXPT6_TASK
+  +--> ?C_INITSEG
+
+?PR?MAIN?EXPT6_TASK            0008H    001DH
+  +--> ?CO?EXPT6_TASK
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Expt6-Task (EXPT6_TASK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/06/2025  12:38:19  PAGE 2
+
+
+
+  -------         MODULE        EXPT6_TASK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:0025H         PUBLIC        control
+  D:00A8H         PUBLIC        IE
+  C:09E0H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  B:00A0H.0       PUBLIC        relay
+  D:00D8H         PUBLIC        CCON
+  B:00B0H.5       PUBLIC        buzzer
+  C:0982H         PUBLIC        main
+  D:0026H         PUBLIC        timer_reset
+  D:0028H         PUBLIC        timer_count
+  D:0099H         PUBLIC        SBUF
+  D:00C0H         PUBLIC        WDTC
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:002AH         PUBLIC        timer_higherbyte
+  C:0A1DH         SYMBOL        _?ix1000
+  D:002CH         PUBLIC        charactor_count
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:00E8H         PUBLIC        IEA
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  D:00F8H         PUBLIC        IPA
+  D:002DH         PUBLIC        timer_disable
+  D:00C8H         PUBLIC        T2CON
+  D:002FH         PUBLIC        timer_lowerbyte
+  D:0031H         PUBLIC        timer_enable
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time_delay_milisecond
+  C:09E0H         LINE#         191
+  C:09E0H         LINE#         192
+  C:09E0H         LINE#         193
+  C:09E3H         LINE#         194
+  C:09F1H         LINE#         195
+  C:09F1H         LINE#         196
+  C:09F4H         LINE#         197
+  C:09F7H         LINE#         198
+  C:09FFH         LINE#         199
+  C:0A02H         LINE#         200
+  C:0A0AH         LINE#         201
+  C:0A12H         LINE#         202
+  C:0A1CH         LINE#         203
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        Message
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/06/2025  12:38:19  PAGE 3
+
+
+  C:0982H         LINE#         8
+  C:0982H         LINE#         9
+  C:0982H         LINE#         10
+  C:0995H         LINE#         11
+  C:0997H         LINE#         12
+  C:0999H         LINE#         13
+  C:099BH         LINE#         14
+  C:099DH         LINE#         15
+  C:09A0H         LINE#         16
+  C:09A3H         LINE#         17
+  C:09A6H         LINE#         18
+  C:09A8H         LINE#         19
+  C:09ABH         LINE#         20
+  C:09ABH         LINE#         21
+  C:09B3H         LINE#         22
+  C:09B6H         LINE#         23
+  C:09B8H         LINE#         24
+  C:09BFH         LINE#         25
+  C:09BFH         LINE#         26
+  C:09BFH         LINE#         27
+  C:09C2H         LINE#         28
+  C:09C5H         LINE#         29
+  C:09C7H         LINE#         30
+  C:09CCH         LINE#         31
+  C:09CCH         LINE#         32
+  C:09CEH         LINE#         33
+  C:09CEH         LINE#         34
+  C:09D3H         LINE#         35
+  C:09D3H         LINE#         36
+  C:09D5H         LINE#         37
+  C:09D5H         LINE#         38
+  C:09DAH         LINE#         39
+  C:09DAH         LINE#         40
+  C:09DCH         LINE#         41
+  C:09DEH         LINE#         42
+  C:09DEH         LINE#         43
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EXPT6_TASK
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?EXPT6_TASK
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00CCH BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=52.0 xdata=0 code=594
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
